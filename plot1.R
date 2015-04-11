@@ -5,7 +5,8 @@ if (!file.exists("household_power_consumption.txt")){
     download.file(fileUrl,destfile="exdata_project.zip",method="curl")
     unzip(zipfile="exdata_project.zip")
 }
-
+#Set english language default
+Sys.setlocale("LC_ALL","C")
 #read table downloaded from coursera project web site
 hpc_origin<-read.table("household_power_consumption.txt", sep = ";", header = TRUE, na.strings = "?", stringsAsFactors = FALSE)
 #filter by date 01/02/2007 and 02/02/2007
