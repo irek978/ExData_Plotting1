@@ -21,7 +21,8 @@ hpc_origin<-read.table("household_power_consumption.txt", sep = ";", header = TR
 hpc<-hpc_origin[(hpc_origin$Date=="1/2/2007") | (hpc_origin$Date=="2/2/2007"),]
 #Generate a datetime dimension for the graph
 hpc$dtime <- strptime(paste(hpc$Date, hpc$Time), "%d/%m/%Y %H:%M:%S")
-#Generate first graph and export in in png device with transparent backround like the version in prof. Peng github repository.
+
+#Generate graph and export in in png device with transparent backround like the version in prof. Peng github repository.
 #The transparent version is the best solution for the inclusion of the object in different contexts : from presentations to websites
 png("plot4.png", width = 480, height = 480, units = 'px', bg="transparent")
 par(mfrow = c(2, 2))

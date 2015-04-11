@@ -20,7 +20,8 @@ hpc_origin<-read.table("household_power_consumption.txt", sep = ";", header = TR
 #filter by date 01/02/2007 and 02/02/2007
 hpc<-hpc_origin[(hpc_origin$Date=="1/2/2007") | (hpc_origin$Date=="2/2/2007"),]
 
-#generate first graph and export in in png device
+#Generate graph and export in in png device with transparent backround like the version in prof. Peng github repository.
+#The transparent version is the best solution for the inclusion of the object in different contexts : from presentations to websites
 png("plot1.png", width = 480, height = 480, units = 'px', bg="transparent")
 hist(hpc$Global_active_power, main = "Global Active Power", 
      ylab = "Frequency", xlab = "Global Active Power (kilowatts)", col = "red")
