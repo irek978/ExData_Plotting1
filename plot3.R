@@ -1,3 +1,11 @@
+options(warn=-1)
+
+if (!require('data.table')) {
+    stop('The package data.table is required. Please install it and try again')
+}
+
+options(warn=-0)
+
 #Checks if the file txt exists or not and if not exists downloads it from the url in coursera
 if (!file.exists("household_power_consumption.txt")){
     #Downloads file project.zip from the coursera project web site.
